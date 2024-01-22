@@ -1,4 +1,4 @@
-# Adminer Docker プロジェクト
+# Adminer
 
 このプロジェクトには、PHPで書かれたフル機能のデータベース管理ツールである[Adminer](https://www.adminer.org/)を実行するためのDockerfileが含まれています。
 
