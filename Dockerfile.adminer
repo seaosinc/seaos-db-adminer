@@ -1,0 +1,10 @@
+# Adminer Image
+FROM adminer
+
+# Adminer default language
+ENV ADMINER_DEFAULT_LANG jp
+
+# expose port
+EXPOSE 8080
+# run adminer
+CMD [ "php", "-S", "[::]:8080", "-t", "/var/www/html" ]
