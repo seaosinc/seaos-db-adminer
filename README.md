@@ -34,9 +34,9 @@ docker run -p <ポート>:8080 adminer
 DockerイメージをGCRにプッシュしたい場合、以下のコマンドを使用できます：
 
 ```bash
-# DockerイメージにGCRレジストリ名をタグ付け
+# DockerイメージにGHCRレジストリ名をタグ付け
 docker tag adminer:latest ghcr.io/seaosinc/adminer:latest
 
-# DockerイメージをGCRにプッシュ
+# DockerイメージをGHCRにプッシュ
 docker push ghcr.io/seaosinc/adminer:latest
 ```
