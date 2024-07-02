@@ -1,10 +1,22 @@
+# -- build: docker build -t adminer -f Dockerfile.adminer .
+# -- run: docker run -d --name adminer -p 8080:8080 adminer
+
 # Adminer Image
 FROM adminer
 
 # Adminer default language
 ENV ADMINER_DEFAULT_LANG jp
 
+# Increase post_max_size and upload_max_filesize
+USER root
+# RUN mkdir -p /usr/local/etc/php/conf.d/ && \
+RUN echo "upload_max_filesize = 200M" > /etc/php/7.4/cli/conf.d/my-custom.ini && \
+    echo "post_max_size = 200M" >> /etc/php/7.4/cli/conf.d/my-custom.ini
+
+#/etc/php/7.4/fpm/conf.d/0-upload_large_dumps.ini 
+
 # expose port
 EXPOSE 8080
+
 # run adminer
 CMD [ "php", "-S", "[::]:8080", "-t", "/var/www/html" ]
